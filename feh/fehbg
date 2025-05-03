@@ -1,0 +1,2 @@
+#!/bin/sh
+feh --no-fehbg --bg-center '/home/doge/.config/wallpapers/snowflake.png' '/home/doge/.config/wallpapers/snowflake-rotated.png' 
