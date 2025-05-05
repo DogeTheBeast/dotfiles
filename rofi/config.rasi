@@ -5,9 +5,9 @@ configuration {
   display-calc: "Calc";
 
   drun-display-format: "{name}";
-  font: "JetBrainsMono Nerd Font Medium 10";
+  font: "JetBrainsMono Nerd Font Medium 8";
   modi: "drun,filebrowser,calc,window,powermenu";
-  terminal: "konsole";
+  terminal: "kitty";
   sidebar-mode: true;
 
 

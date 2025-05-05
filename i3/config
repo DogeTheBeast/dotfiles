@@ -55,7 +55,7 @@ bindsym $mod+Return exec kitty
 bindsym $mod+q kill
 
 # start dmenu (a program launcher)
-bindsym $mod+space exec "rofi -show drun -theme-str 'window {width: 40%; height:30%;}'"
+bindsym $mod+space exec "rofi -show drun -theme glue_pro_blue"
 # A more modern dmenu replacement is rofi:
 # bindcode $mod+40 exec "rofi -modi drun,run -show drun"
 # There also is i3-dmenu-desktop which only displays applications shipping a
@@ -187,6 +187,7 @@ bindsym $mod+r mode "resize"
 # finds out, if available)
 bar {
         status_command i3status
+	status_command i3blocks -c ~/.config/i3blocks/config
 	font pango:monospace 8
 }
 
