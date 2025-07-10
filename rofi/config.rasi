@@ -1,6 +1,6 @@
 configuration {
-  display-drun: "Applications:";
-  display-window: "Windows:";
+  display-drun: "Applications";
+  display-window: "Windows";
   display-filebrowser: "Browse";
   display-calc: "Calc";
 
