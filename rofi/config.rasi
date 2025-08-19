@@ -5,7 +5,6 @@ configuration {
   display-calc: "Calc";
 
   drun-display-format: "{name}";
-  font: "JetBrainsMono Nerd Font Medium 8";
   modi: "drun,filebrowser,calc,window,powermenu";
   terminal: "kitty";
   sidebar-mode: true;
@@ -24,6 +23,4 @@ configuration {
 }
 
 
-
-/* vim: ft=sass
 @theme "/usr/share/rofi/themes/glue_pro_blue.rasi"
