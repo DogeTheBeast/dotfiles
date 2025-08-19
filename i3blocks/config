@@ -33,7 +33,7 @@ signal=10
 
 [iface]
 command=~/.config/i3blocks/i3blocks-contrib/iface/iface
-LABEL=wifi
+#LABEL=eth0:
 #IFACE=wlan0
 ADDRESS_FAMILY=inet
 color=#00FF00
@@ -62,6 +62,20 @@ interval=30
 command=~/.config/i3blocks/i3blocks-contrib/battery2/battery2
 markup=pango
 interval=30
+
+[keyindicator]
+command=~/.config/i3blocks/i3blocks-contrib/keyindicator/keyindicator
+#Allowed keys are CAPS and NUM
+KEY=CAPS
+markup=pango
+interval=once
+signal=11
+#TEXT_ON=CapsLockOn
+#TEXT_OFF=CapsLockOff
+#COLOR_ON=#00FF00
+#COLOR_OFF=#222222
+#BG_COLOR_ON=
+#BG_COLOR_OFF= 
 
 [time]
 command=date '+%Y-%m-%d %H:%M:%S'
