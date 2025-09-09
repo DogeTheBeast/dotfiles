@@ -16,6 +16,31 @@ instance=spotify
 interval=5
 signal=10
 
+[volume-pipewire]
+command=~/.config/i3blocks/i3blocks-contrib/volume-pipewire/volume-pipewire
+interval=once
+signal=11
+LONG_FORMAT="${SYMB}${VOL}%"
+SHORT_FORMAT="${SYMB}${VOL}%"
+
+[backlight]
+command=~/.config/i3blocks/i3blocks-contrib/backlight/backlight
+label=☀
+interval=60
+signal=10
+#STEP_SIZE=5
+#USE_SUDO=0
+
+[iface]
+command=~/.config/i3blocks/i3blocks-contrib/iface/iface
+#LABEL=eth0:
+#IFACE=wlan0
+ADDRESS_FAMILY=inet
+color=#00FF00
+interval=10
+# set this to 1 to display the name of the connected WIFI interface instead of the IP address.
+display_wifi_name=1
+
 [cpu_usage]
 command=~/.config/i3blocks/i3blocks-contrib/cpu_usage/cpu_usage
 interval=10
@@ -30,18 +55,13 @@ LABEL=CPU
 
 [memory]
 command=~/.config/i3blocks/i3blocks-contrib/memory/memory
-label=MEM: 
+label=MEM 
 interval=30
 
-[iface]
-command=~/.config/i3blocks/i3blocks-contrib/iface/iface
-#LABEL=eth0:
-#IFACE=wlan0
-ADDRESS_FAMILY=inet
-color=#00FF00
-interval=10
-# set this to 1 to display the name of the connected WIFI interface instead of the IP address.
-display_wifi_name=1
+[battery2]
+command=~/.config/i3blocks/i3blocks-contrib/battery2/battery2
+markup=pango
+interval=30
 
 [keyindicator]
 command=~/.config/i3blocks/i3blocks-contrib/keyindicator/keyindicator
@@ -56,28 +76,6 @@ signal=11
 #COLOR_OFF=#222222
 #BG_COLOR_ON=
 #BG_COLOR_OFF= 
-
-[volume-pipewire]
-command=~/.config/i3blocks/i3blocks-contrib/volume-pipewire/volume-pipewire
-interval=once
-signal=1
-#MIXER=[determined automatically]
-#SCONTROL=[determined automatically]
-##exposed format variables: ${SYMB}, ${VOL}, ${INDEX}, ${NAME}
-LONG_FORMAT="${SYMB} ${VOL}% [${INDEX}]"
-#SHORT_FORMAT="${SYMB} ${VOL}% [${INDEX}]"
-#AUDIO_HIGH_SYMBOL=' ' 
-#AUDIO_MED_THRESH=50
-#AUDIO_MED_SYMBOL= 
-#AUDIO_LOW_THRESH=0
-#AUDIO_LOW_SYMBOL=
-#AUDIO_DELTA=5
-#DEFAULT_COLOR="#ffffff"
-#MUTED_COLOR="#a0a0a0"
-#USE_ALSA_NAME=0
-#USE_DESCRIPTION=0
-## SUBSCRIBE=1 requires interval=persist and always uses LONG_FORMAT
-#SUBSCRIBE=0
 
 [time]
 command=date '+%Y-%m-%d %H:%M:%S'
