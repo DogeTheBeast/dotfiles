@@ -145,6 +145,8 @@ bindsym $mod+Shift+8 move container to workspace number $ws8
 bindsym $mod+Shift+9 move container to workspace number $ws9
 bindsym $mod+Shift+0 move container to workspace number $ws10
 
+bindsym $mod+Shift+s exec bash ~/.config/i3/swap_workspaces.sh
+
 # reload the configuration file
 bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
@@ -211,4 +213,3 @@ bindsym XF86AudioLowerVolume --release exec pkill -RTMIN+1 i3blocks
 bindsym XF86AudioRaiseVolume exec pactl set-sink-volume 0 +5%
 bindsym XF86AudioRaiseVolume --release exec pkill -RTMIN+1 i3blocks
 
-# Theme
