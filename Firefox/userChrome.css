@@ -99,7 +99,7 @@
      +---+---+---+---+---+---+---*/
 
      /* showing only the back button */
-     #back-button{ display: none !important; }
+     /* #back-button{ display: none !important; } */
      #forward-button{ display: none !important; }
      #stop-button{ display: none !important; }
      #reload-button{ display: none !important; }
