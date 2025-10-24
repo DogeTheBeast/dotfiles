@@ -5,10 +5,15 @@ return {
       "~/GitHub/*",
       "~/.config/*",
       "~/Coop/*",
+      "~/University/*",
+      "~/University/CPEN411/Assignments/*",
+      "~/University/CPSC436/student-ratiq/",
+      "~/University/CPSC436/group-5-Deadlocked-In/",
     },
     picker = {
       type = "telescope", -- one of "telescope", "fzf-lua", or "snacks"
-    }
+    },
+    last_session_on_startup = false
   },
   init = function()
     -- enable saving the state of plugins in the session
