@@ -35,6 +35,7 @@ require("lazy").setup({
 
 -- Theme 
 vim.cmd("colorscheme citruszest")
+vim.cmd("set cursorline")
 
 -- Smart Save
 vim.cmd('ca W SudaWrite')
@@ -72,10 +73,20 @@ require('lualine').setup({
   sections = {
     lualine_a = {'mode'},
     lualine_b = {'branch', 'diff', 'diagnostics'},
-    lualine_c = {'filename'},
+    lualine_c = {
+	    {
+		'filename',
+            	path = 1,
+    	    }
+    },
     lualine_x = {'encoding', 'filetype'},
     lualine_y = {'progress'},
     lualine_z = {'location'}
   }
 })
 
+-- Hologram 
+
+require('hologram').setup{
+    auto_display = true -- WIP automatic markdown image display, may be prone to breaking
+}
