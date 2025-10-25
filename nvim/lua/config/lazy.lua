@@ -35,6 +35,7 @@ require("lazy").setup({
 
 -- Theme 
 vim.cmd("colorscheme citruszest")
+vim.cmd("set cursorline")
 
 -- Smart Save
 vim.cmd('ca W SudaWrite')

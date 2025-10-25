@@ -9,11 +9,11 @@
 #
 # Please see https://i3wm.org/docs/userguide.html for a complete reference!
 
-set $mod Mod1
+set $mod Mod4
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
-font pango:monospace 10
+font JetBrains Mono NL
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
@@ -28,8 +28,7 @@ exec --no-startup-id dex --autostart --environment i3
 
 # xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the
 # screen before suspend. Use loginctl lock-session to lock your screen.
-exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock
-# exec --no-startup-id xss-lock -- ~/.config/i3/lock.sh
+exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 
 # NetworkManager is the most popular way to manage wireless networks on Linux,
 # and nm-applet is a desktop environment-independent system tray GUI for it.
@@ -46,17 +45,14 @@ floating_modifier $mod
 tiling_drag modifier titlebar
 
 # start a terminal
-bindsym $mod+Return exec alacritty
+bindsym $mod+Return exec kitty 
 
 # kill focused window
 bindsym $mod+q kill
 
 # start dmenu (a program launcher)
-bindsym $mod+space exec "rofi -show drun"
+bindsym $mod+space exec "rofi -show drun -theme glue_pro_blue"
 
-# start clipcatd
-exec --no-startup-id clipcatd
-bindsym $mod+b exec "clipcat-menu"
 # A more modern dmenu replacement is rofi:
 # bindcode $mod+40 exec "rofi -modi drun,run -show drun"
 # There also is i3-dmenu-desktop which only displays applications shipping a
@@ -196,12 +192,12 @@ exec --no-startup-id bash ~/.config/feh/fehbg
 exec --no-startup-id keepassxc
 
 # Mouse
-exec --no-startup-id bash ~/.config/i3/mouse.sh
-exec --no-startup-id libinput-gestures-setup start
+# exec --no-startup-id bash ~/.config/i3/mouse.sh
+# exec --no-startup-id libinput-gestures-setup start
 
 # Brightness
-bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl set +5% && pkill -RTMIN+10 i3blocks
-bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl set 5%- && pkill -RTMIN+10 i3blocks
+# bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl set +5% && pkill -RTMIN+10 i3blocks
+# bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl set 5%- && pkill -RTMIN+10 i3blocks
 
 # Pipewire-pulse
 bindsym XF86AudioMute exec pactl set-sink-mute 0 toggle
@@ -213,11 +209,9 @@ bindsym XF86AudioRaiseVolume --release exec pkill -RTMIN+11 i3blocks
 
 # Media player controls
 bindsym XF86AudioPlay exec playerctl play-pause --player=spotify
-# bindsym XF86AudioPause exec playerctl next
 bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
 
-bindsym $mod+backslash exec bash ~/.config/i3/disable-touch.sh 
 for_window [class="^.*"] border pixel 4
 
 # Lock screen
@@ -242,13 +236,4 @@ exec_always --no-startup-id xidlehook --not-when-audio --timer 600 "systemctl sl
 
 # KDEConnect
 exec_always --no-startup-id kdeconnectd
-
-#i3blocks
-bindsym --release Caps_Lock exec pkill -SIGRTMIN+11 i3blocks
-bindsym XF86AudioMute exec pactl set-sink-mute 0 toggle
-bindsym XF86AudioMute --release exec pkill -RTMIN+1 i3blocks
-bindsym XF86AudioLowerVolume exec pactl set-sink-volume 0 -5%
-bindsym XF86AudioLowerVolume --release exec pkill -RTMIN+1 i3blocks
-bindsym XF86AudioRaiseVolume exec pactl set-sink-volume 0 +5%
-bindsym XF86AudioRaiseVolume --release exec pkill -RTMIN+1 i3blocks
 
