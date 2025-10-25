@@ -182,14 +182,8 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
-# Spectacle
-bindsym $mod+grave exec --no-startup-id spectacle -r
-
 # Feh
 exec --no-startup-id bash ~/.config/feh/fehbg
-
-# KeePassXC
-exec --no-startup-id keepassxc
 
 # Mouse
 # exec --no-startup-id bash ~/.config/i3/mouse.sh
@@ -208,7 +202,7 @@ bindsym XF86AudioRaiseVolume exec pactl set-sink-volume 0 +5%
 bindsym XF86AudioRaiseVolume --release exec pkill -RTMIN+11 i3blocks
 
 # Media player controls
-bindsym XF86AudioPlay exec playerctl play-pause --player=spotify
+bindsym XF86AudioPlay exec playerctl play-pause
 bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
 
@@ -217,6 +211,7 @@ for_window [class="^.*"] border pixel 4
 # Lock screen
 # bindsym ctrl+$mod+l exec --no-startup-id sleep 1 && xset dpms force suspend
 bar {
+	position top
 	status_command i3blocks -c ~/.config/i3blocks/config
 	font pango:monospace 8
 }
@@ -229,11 +224,15 @@ exec_always --no-startup-id clipcatd
 bindsym $mod+Shift+v exec clipcat-menu 
 
 # Spectacle
-bindsym Print exec spectacle -r 
+bindsym $mod+less exec scrot ~/temp/%b%d::%H%M%S.png -s -e 'xclip -selection clipboard -t image/png -i $f' 
 
 # Xidlehook
 exec_always --no-startup-id xidlehook --not-when-audio --timer 600 "systemctl sleep" ""
 
 # KDEConnect
 exec_always --no-startup-id kdeconnectd
+
+# Kitti3
+exec_always --no-startup-id kitti3 -p CC
+bindsym $mod+n nop kitti3
 
